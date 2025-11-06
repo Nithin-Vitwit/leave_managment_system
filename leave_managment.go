@@ -247,13 +247,13 @@ func (h *Hr) showPendingLeaves(s *System) {
 func (h *Hr) grant(l *Leave, s *System) {
 	l.Status = "Granted"
 	saveSystem(s)
-	fmt.Printf("✅ Leave for %s has been **GRANTED**.\n", l.Name)
+	fmt.Printf(" Leave for %s has been **GRANTED**.\n", l.Name)
 }
 
 func (h *Hr) decline(l *Leave, s *System) {
 	l.Status = "Declined"
 	saveSystem(s)
-	fmt.Printf("❌ Leave for %s has been **DECLINED**.\n", l.Name)
+	fmt.Printf(" Leave for %s has been **DECLINED**.\n", l.Name)
 }
 
 func login(s *System) {
@@ -261,7 +261,7 @@ func login(s *System) {
 	var choice int
 
 	fmt.Println("\n==================================")
-	fmt.Println("💼 Leave Management System Login 📅")
+	fmt.Println(" Leave Management System Login ")
 	fmt.Println("==================================")
 	fmt.Println("Select User Type:")
 	fmt.Println("1) Employee")
