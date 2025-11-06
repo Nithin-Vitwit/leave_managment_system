@@ -53,7 +53,7 @@ func loadSystem(fileName string) *System {
 	data, err := os.ReadFile(fileName)
 	if err != nil {
 		if os.IsNotExist(err) {
-			fmt.Printf("⚠️ %s not found. Starting with a fresh system.\n", fileName)
+			fmt.Printf(" %s not found. Starting with a fresh system.\n", fileName)
 			return s
 		}
 		fmt.Printf("Error reading file %s: %v. Starting fresh.\n", fileName, err)
@@ -65,7 +65,7 @@ func loadSystem(fileName string) *System {
 		return s
 	}
 
-	fmt.Printf("✅ System state loaded from %s.\n", fileName)
+	fmt.Printf("System state loaded from %s.\n", fileName)
 	return s
 }
 
@@ -147,7 +147,7 @@ func (e *Emp) newLeave(s *System) {
 
 	s.Leaves = append(s.Leaves, l)
 	saveSystem(s)
-	fmt.Println("\n✅ Leave application submitted successfully! Status: Pending")
+	fmt.Println("\nLeave application submitted successfully! Status: Pending")
 	e.showActions(s)
 }
 
@@ -186,7 +186,7 @@ func hrLogin(s *System) {
 			login(s)
 		}
 	} else {
-		fmt.Println("❌ Invalid password. Returning to main login.")
+		fmt.Println(" Invalid password. Returning to main login.")
 		login(s)
 	}
 }
@@ -281,7 +281,7 @@ func login(s *System) {
 		if emp, ok := s.Employees[userID]; ok {
 			emp.showActions(s)
 		} else {
-			fmt.Println("❌ Employee ID not found.")
+			fmt.Println(" Employee ID not found.")
 			login(s)
 		}
 	case 2:
